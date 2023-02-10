@@ -3,6 +3,7 @@ package com.darllen.sizani.controller;
 import com.darllen.sizani.dto.ResponseDTO;
 import com.darllen.sizani.entity.Book;
 import com.darllen.sizani.repository.BookRepository;
+import com.darllen.sizani.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,16 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/books")
 public class BookController {
 
-    public BookRepository bookRepository;
+    public BookService bookService;
 
     @Autowired
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
     }
 
     @PostMapping()
     public ResponseDTO create(@RequestBody Book book){
-        Book savedBook = bookRepository.save(book);
-        return ResponseDTO.builder().message("Book created with ID: " + savedBook.getId()).build();
+        return bookService.create(book);
     }
 }
