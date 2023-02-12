@@ -30,7 +30,7 @@ public class BookControllerTest {
     }
 
     @Test
-    void testee() {
+    void teste() {
         // When POST is called then a book should be created
         System.out.print("ALOO");
 
