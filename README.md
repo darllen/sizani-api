@@ -25,6 +25,7 @@ https://sizani.herokuapp.com/books
 
 ## 🚀 Tech
 * Java 17
+* Spring Boot
 * Maven
 * Intellj
 * Controle de versão GIT
