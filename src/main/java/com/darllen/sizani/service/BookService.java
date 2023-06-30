@@ -33,22 +33,23 @@ public class BookService {
 //        return ResponseDTO.builder().message("Book created with ID: " + savedBook.getId()).build();
 //    }
 
-    public BookDTO create(BookDTO book){
+    public BookDTO create(BookDTO book) {
         Long id = books.keySet().size() + 1L;
         book.setId(id);
 
         books.put(id, book);
         return book;
     }
-    public BookDTO getByID(Long id){
+
+    public BookDTO getByID(Long id) {
         return books.get(id);
     }
 
-    public List<BookDTO> getAll(){
+    public List<BookDTO> getAll() {
         return new ArrayList<>(books.values());
     }
 
-    public String delete(Long id){
+    public String delete(Long id) {
         books.remove(id);
         return "deleted!";
     }

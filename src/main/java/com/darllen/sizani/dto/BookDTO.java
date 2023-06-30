@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookDTO {
+public class  BookDTO {
 
 
     private Long id;
